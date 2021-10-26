@@ -1,17 +1,26 @@
 def myAtoi(self, s: str) -> int:
         string = s.lstrip()
         r = list(string)
-        digits = ['-','+','1','2','3','4','5','6','7','8','9','0']
+        digits = ['1','2','3','4','5','6','7','8','9','0']
+        operators = ['+', '-']
         #num = []
-        for char in reversed(r):
+        diglist = []
+        for i in range(0, len(r)):
+            if r[i] != '+' or r[i] != '-':
+                if r[i] in digits:
+                    # TypeError: 'builtin_function_or_method' object is not subscriptable
+                    diglist.append[i: len(r)]
+                    continue
+            if r[i] in operators:
+                diglist.append[i:len(r)]
+                continue
+        for char in reversed(diglist):
             if char not in digits:
                 r.remove(char)
         for i in range(0, len(r)):
             if r[i] == "-" or r[i] == "+":
                 del r[:i]
-
-        print(r)
-
+        return diglist
 print(myAtoi(1, "00000-42a1234m"))
 #         for char in res[0:len(s)]:
 #             if char not in digits:
