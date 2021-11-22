@@ -8,7 +8,7 @@ class Solution:
             while remain <= divisor:
                 counter += 1
                 remain -= divisor
-            if counter % 2 == 0:
+            if counter % 2 == 0: #mod verboten!
                 counter -= 1
             return counter
         elif divisor < 0:
